@@ -1,0 +1,7 @@
+.SketchCanvas {
+    border: 5px solid orange;
+    width: auto;
+    height: 80%;
+    box-shadow: 0px 0px 5px black;
+    background-color: white;
+}

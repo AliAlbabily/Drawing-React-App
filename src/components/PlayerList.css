@@ -1,0 +1,9 @@
+.Playerlist {
+    border: 5px solid greenyellow;
+    background-color: #8080bf;
+}
+
+.Playerlist > h1 {
+    text-align: center;
+    text-decoration: underline;
+}
