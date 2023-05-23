@@ -1,8 +1,5 @@
 .App {
-  min-width: 900px;
-  max-width: 1200px;
-  min-height: 700px;
-  max-height: 150vh;
+  min-height: 92vh;
   margin: 0 auto; /* Top & Bottom will be 0, and Right & Left will be auto */
   background-color: #bfbfbf;  
   border: 1px solid black;
