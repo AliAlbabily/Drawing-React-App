@@ -11,7 +11,7 @@ function Toolbar(props) {
       {/* <Eraser />
       <PenSizeSelector /> */}
       <ClearScreenBtn clearDrawing={props.clearDrawing} />
-      <ColorSelector />
+      <ColorSelector switchColor={props.switchColor} />
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import './SketchCanvas.css';
 
 import Toolbar from './toolbar/Toolbar';
@@ -6,10 +8,16 @@ import { useRef } from 'react';
 
 function SketchCanvas() {
     const canvasRef = useRef(null);
+    const [color, setColor] = useState("black");
 
     const clearDrawing = () => {
         console.log("Canvas cleared");
         canvasRef.current.clearCanvas()
+    }
+    
+    const switchColor = (selectedColor) => {
+        console.log("Color switched to: " + selectedColor)
+        setColor(selectedColor)
     }
 
     return (
@@ -18,11 +26,11 @@ function SketchCanvas() {
                 id="Canvas"
                 strokeWidth={4}
                 height="80%"
-                strokeColor="black"
-                canvasColor="ghostwhite"
+                strokeColor={color}
+                canvasColor="white"
                 ref={canvasRef}
             />
-            <Toolbar clearDrawing={clearDrawing} />
+            <Toolbar clearDrawing={clearDrawing} switchColor={switchColor} />
         </div>
     )
 }
