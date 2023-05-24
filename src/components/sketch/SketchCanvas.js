@@ -14,7 +14,7 @@ function SketchCanvas() {
                 strokeWidth={4}
                 height="80%"
                 strokeColor="black"
-                canvasColor="Yellow"
+                canvasColor="ghostwhite"
                 ref={canvasRef}
             />
             <Toolbar />
