@@ -1,0 +1,12 @@
+
+.toolbar-row {
+    display: flex;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}

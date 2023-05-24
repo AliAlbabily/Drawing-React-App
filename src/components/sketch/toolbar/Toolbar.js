@@ -6,15 +6,14 @@ import ClearScreenBtn from './ClearScreenBtn';
 import './Toolbar.css';
 
 function Toolbar() {
-    return (
-        <div className="Toolbar">
-            <h1>Toolbar</h1>
-            <Eraser />
-            <ColorSelector />
-            <PenSizeSelector />
-            <ClearScreenBtn />
-        </div>
-    )
+  return (
+    <div className="Toolbar">
+      {/* <Eraser />
+      <PenSizeSelector /> */}
+      <ClearScreenBtn />
+      <ColorSelector />
+    </div>
+  )
 }
 
 export default Toolbar;
