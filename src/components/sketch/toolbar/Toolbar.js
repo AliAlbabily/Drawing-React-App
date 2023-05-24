@@ -5,12 +5,12 @@ import ClearScreenBtn from './ClearScreenBtn';
 
 import './Toolbar.css';
 
-function Toolbar() {
+function Toolbar(props) {
   return (
     <div className="Toolbar">
       {/* <Eraser />
       <PenSizeSelector /> */}
-      <ClearScreenBtn />
+      <ClearScreenBtn clearDrawing={props.clearDrawing} />
       <ColorSelector />
     </div>
   )

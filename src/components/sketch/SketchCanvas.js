@@ -7,6 +7,11 @@ import { useRef } from 'react';
 function SketchCanvas() {
     const canvasRef = useRef(null);
 
+    const clearDrawing = () => {
+        console.log("Canvas cleared");
+        canvasRef.current.clearCanvas()
+    }
+
     return (
         <div className="SketchCanvas"> 
             <ReactSketchCanvas
@@ -17,7 +22,7 @@ function SketchCanvas() {
                 canvasColor="ghostwhite"
                 ref={canvasRef}
             />
-            <Toolbar />
+            <Toolbar clearDrawing={clearDrawing} />
         </div>
     )
 }
