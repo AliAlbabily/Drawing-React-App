@@ -1,13 +1,7 @@
-.SketchView {
+.WordSelector {
     border: 5px solid blue;
     background-color: rgb(216, 216, 216);
     width: auto;
     height: 100%;
     padding: 10px;
-}
-
-.SketchView > .TopicAndTime {
-    display: flex;
-    text-align: center;
-    justify-content: space-evenly;
 }
