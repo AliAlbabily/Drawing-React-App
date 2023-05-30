@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './SketchView.css';
 
 import SketchCanvas from './SketchCanvas';
 import GuessView from '../guess/GuessView';
 import GuessBtn from '../guess/GuessBtn';
+import SubmitBtn from './SubmitBtn';
 
 function SketchView(props) {
+    const [startCounting, setStartCounting] = useState(true)
     const [count, setCount] = useState(60);
     const [isDrawing, setIsDrawing] = useState(true);
     const [imageSrc, setImageSrc] = useState("");
 
+    const canvasRef = useRef(null);
+
     useEffect(() => {
-        let timer = setInterval(() => {
+        let timer = null
+
+        if (!startCounting) {
+            return () => {};
+        }
+
+        timer = setInterval(() => {
             setCount(prevCount => {
                 if (prevCount <= 0) {
-                    clearInterval(timer);
-                    setIsDrawing(false)
+                    clearInterval(timer)
+                    submitDrawing()
                     return prevCount; 
                 } else {
                     return prevCount - 1;
@@ -27,11 +37,11 @@ function SketchView(props) {
         return () => {
             clearInterval(timer); 
         };
-    }, []); // empty dependency array to run the effect only once
+    }, [startCounting]); // empty dependency array to run the effect only once
 
-
-    const submitDrawing = (canvasObject) => {
-        canvasObject
+    const submitDrawing = () => {
+        setStartCounting(false)
+        canvasRef.current
             .exportImage("png")
             .then(drawingSrc => {
                 setImageSrc(drawingSrc)
@@ -50,7 +60,10 @@ function SketchView(props) {
                 
             </div>
             { isDrawing 
-                ? <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing}/>
+                ? <>
+                    <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing} canvasRef={canvasRef} />
+                    <SubmitBtn submitDrawing={submitDrawing} />
+                </>
                 : <><GuessView imageSrc={imageSrc} /> <GuessBtn /> </>
             }
         </div>
