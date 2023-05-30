@@ -7,10 +7,38 @@ function GuessView(props) {
 
     const guessWord = () => {
         if (inputGuessRef.current.value === props.wordToGuess) {
-            console.log("CORRECT");
+            alert("You guessed it right. Awesome work!")
+            if (!props.playerATurn) {
+                props.setPlayerAPoints(playerAPoints => {
+                    return playerAPoints + 1;
+                })
+            } else {
+                props.setPlayerBPoints(playerBPoints => {
+                    return playerBPoints + 1;
+                })
+            }
+            shiftTurn()
         } else {
-            console.log("INCORRECT");
+            alert("You guessed it wrong. Try again!")
+            if (!props.playerATurn) {
+                props.setPlayerAPoints(playerAPoints => {
+                    return playerAPoints - 1;
+                })
+            } else {
+                props.setPlayerBPoints(playerBPoints => {
+                    return playerBPoints - 1;
+                })
+            }
         }
+        //shiftTurn()
+        
+        
+    }
+
+    const shiftTurn = () => {
+        props.setWordIsSelected(false)
+        props.setIsDrawing(false)
+        props.setPlayerATurn(!props.playerATurn)
     }
 
     //The word to guess: {props.wordToGuess}

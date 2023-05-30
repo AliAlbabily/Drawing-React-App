@@ -37,7 +37,6 @@ function WordSelector(props) {
 
     return (
         <div className="WordSelector">
-            <h1>Word Selector</h1>
             <WordContainer words={words} selectWord={selectWord}/>
             <ShuffleBtn shuffleWords={shuffleWords}/>
         </div>

@@ -5,20 +5,27 @@ import '../components/Game.css';
 import SketchView from '../components/sketch/SketchView';
 import WordSelector from './words/WordSelector';
 
-function Game() {
+function Game(props) {
     const [wordIsSelected, setWordIsSelected] = useState(false);
     const [word, setWord] = useState("");
 
     if (wordIsSelected) {
         return (
             <div className="Game">
-                <SketchView word={word}/>
+                <SketchView 
+                    word={word} 
+                    setPlayerAPoints={props.setPlayerAPoints} 
+                    setPlayerBPoints={props.setPlayerBPoints} 
+                    playerATurn={props.playerATurn}
+                    setPlayerATurn={props.setPlayerATurn}
+                    setWordIsSelected={setWordIsSelected}
+                />
             </div>
         );
     } else {
         return (
             <div className="Game">
-                <WordSelector setWordIsSelected={setWordIsSelected} setWord={setWord}/>
+                <WordSelector setWordIsSelected={setWordIsSelected} setWord={setWord} />
             </div>
         );
     }

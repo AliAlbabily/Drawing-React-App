@@ -63,7 +63,16 @@ function SketchView(props) {
                     <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing} canvasRef={canvasRef} />
                     <SubmitBtn submitDrawing={submitDrawing} />
                 </>
-                : <><GuessView imageSrc={imageSrc} wordToGuess={props.word}/> </>
+                : <><GuessView 
+                    imageSrc={imageSrc} 
+                    wordToGuess={props.word}
+                    setPlayerAPoints={props.setPlayerAPoints} 
+                    setPlayerBPoints={props.setPlayerBPoints} 
+                    playerATurn={props.playerATurn}
+                    setPlayerATurn={props.setPlayerATurn}
+                    setWordIsSelected={props.setWordIsSelected}
+                    setIsDrawing={setIsDrawing}
+                /> </>
             }
         </div>
     )
