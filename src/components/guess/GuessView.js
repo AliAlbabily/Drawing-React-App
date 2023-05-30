@@ -2,12 +2,12 @@ import React from 'react';
 
 import './GuessView.css';
 
-function GuessView() {
+function GuessView(props) {
     return ( 
         <div className='GuessView'>
             {/* TODO: first div for the image */}
             <div>
-                <h1>Our Guess View</h1>
+                <img src={props.imageSrc} />
             </div>
             {/* TODO: second div for the input  */}
             <div>

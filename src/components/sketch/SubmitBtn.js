@@ -1,9 +1,14 @@
 import './SubmitBtn.css';
 
-function SubmitBtn() {
+function SubmitBtn(props) {
+    
+    const submitDrawing = () => {
+        props.submitDrawing()
+    }
+
     return (
         <div className="SubmitBtn">
-            <button onClick={() => console.log("I'm mad")}>Submit</button>
+            <button onClick={() => submitDrawing()}>Submit</button>
         </div>
     )
 }

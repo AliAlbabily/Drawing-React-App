@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import './SketchCanvas.css';
 
 import Toolbar from './toolbar/Toolbar';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
-import { useRef } from 'react';
+import SubmitBtn from './SubmitBtn';
 
-function SketchCanvas() {
+function SketchCanvas(props) {
     const canvasRef = useRef(null);
     const [color, setColor] = useState("black");
 
@@ -20,17 +20,17 @@ function SketchCanvas() {
         setColor(selectedColor)
     }
 
-    // TODO: for later use
-    // discuss whether the data should be saved in localstorage or as a state
-    const saveDrawing = () => {
-        canvasRef.current
-            .exportImage("png")
-            .then(drawingSrc => {
-                console.log(drawingSrc)
-            })
-            .catch(e => {
-                console.log(e);
-            });
+    const submitDrawing = () => {
+        // canvasRef.current
+        //     .exportImage("png")
+        //     .then(drawingSrc => {
+        //         console.log(drawingSrc)
+        //         props.setImageSrc(drawingSrc)
+        //     })
+        //     .catch(e => {
+        //         console.log(e);
+        //     });
+        props.submitDrawing(canvasRef.current)
     }
 
     return (
@@ -44,6 +44,7 @@ function SketchCanvas() {
                 ref={canvasRef}
             />
             <Toolbar clearDrawing={clearDrawing} switchColor={switchColor} />
+            <SubmitBtn submitDrawing={submitDrawing} />
         </div>
     )
 }

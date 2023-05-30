@@ -3,20 +3,20 @@ import React, { useState, useEffect } from 'react';
 import './SketchView.css';
 
 import SketchCanvas from './SketchCanvas';
-import SubmitBtn from './SubmitBtn';
 import GuessView from '../guess/GuessView';
 import GuessBtn from '../guess/GuessBtn';
 
 function SketchView(props) {
     const [count, setCount] = useState(60);
-    const [isDrawing, setIsDrawing] = useState(false);
+    const [isDrawing, setIsDrawing] = useState(true);
+    const [imageSrc, setImageSrc] = useState("");
 
     useEffect(() => {
         let timer = setInterval(() => {
             setCount(prevCount => {
                 if (prevCount <= 0) {
                     clearInterval(timer);
-                    console.log("Time's up!");
+                    setIsDrawing(false)
                     return prevCount; 
                 } else {
                     return prevCount - 1;
@@ -29,6 +29,19 @@ function SketchView(props) {
         };
     }, []); // empty dependency array to run the effect only once
 
+
+    const submitDrawing = (canvasObject) => {
+        canvasObject
+            .exportImage("png")
+            .then(drawingSrc => {
+                setImageSrc(drawingSrc)
+                setIsDrawing(false)
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    }
+
     return (
         <div className="SketchView">
             <div className='TopicAndTime'>
@@ -37,8 +50,8 @@ function SketchView(props) {
                 
             </div>
             { isDrawing 
-                ? <><SketchCanvas /><SubmitBtn /> </>
-                : <><GuessView /> <GuessBtn /> </>
+                ? <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing}/>
+                : <><GuessView imageSrc={imageSrc} /> <GuessBtn /> </>
             }
         </div>
     )
