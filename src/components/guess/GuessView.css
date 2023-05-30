@@ -5,3 +5,32 @@
     box-shadow: 0px 0px 5px black;
     background-color: white;
 }
+
+.GuessView > .ImageDiv {
+    border: 5px solid brown;
+    height: 80%;
+}
+
+.GuessView > .ImageDiv > img {
+    height: 100%;
+    width: 100%;
+}
+
+.GuessView > .InputDiv {
+    border: 5px solid black;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GuessView > .InputDiv > form > input {
+    background-color: #8080bf;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.GuessView > .InputDiv > form > h2 {
+    text-align: center;
+}

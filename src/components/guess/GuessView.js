@@ -5,13 +5,14 @@ import './GuessView.css';
 function GuessView(props) {
     return ( 
         <div className='GuessView'>
-            {/* TODO: first div for the image */}
-            <div>
+            <div className='ImageDiv'>
                 <img src={props.imageSrc} />
             </div>
-            {/* TODO: second div for the input  */}
-            <div>
-                
+            <div className='InputDiv'>
+                <form>
+                    <h2>Your guess:</h2>
+                    <input type='text' />
+                </form>
             </div>
         </div>
     );
