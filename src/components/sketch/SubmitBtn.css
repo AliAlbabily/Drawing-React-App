@@ -1,0 +1,15 @@
+.SubmitBtn > button {
+    background-color: greenyellow;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 3px black;
+    cursor: pointer;
+}
+
+.SubmitBtn > button:hover {
+    background-color: #8080bf;
+    transition: all 300ms  ease-in-out;
+}
+
