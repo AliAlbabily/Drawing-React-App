@@ -4,7 +4,6 @@ import './SketchView.css';
 
 import SketchCanvas from './SketchCanvas';
 import GuessView from '../guess/GuessView';
-import GuessBtn from '../guess/GuessBtn';
 import SubmitBtn from './SubmitBtn';
 
 function SketchView(props) {
@@ -64,7 +63,7 @@ function SketchView(props) {
                     <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing} canvasRef={canvasRef} />
                     <SubmitBtn submitDrawing={submitDrawing} />
                 </>
-                : <><GuessView imageSrc={imageSrc} /> <GuessBtn /> </>
+                : <><GuessView imageSrc={imageSrc} wordToGuess={props.word}/> </>
             }
         </div>
     )
