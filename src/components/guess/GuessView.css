@@ -1,5 +1,5 @@
 .GuessView {
-    border: 5px solid orange;
+    /* border: 5px solid orange; */
     width: auto;
     height: 90%;
     box-shadow: 0px 0px 5px black;
@@ -7,7 +7,7 @@
 }
 
 .GuessView > .ImageDiv {
-    border: 5px solid brown;
+    /* border: 5px solid brown; */
     height: 70%;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .GuessView > .InputDiv {
-    border: 5px solid black;
+    /* border: 5px solid black; */
     height: 30%;
     display: flex;
     justify-content: center;

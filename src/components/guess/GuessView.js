@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 import './GuessView.css';
 
 function GuessView(props) {
     const inputGuessRef = useRef(null);
+    const [livesCount, setLivesCount] = useState(3);
 
     const guessWord = () => {
         if (inputGuessRef.current.value === props.wordToGuess) {
-            alert("You guessed it right. Awesome work!")
             if (!props.playerATurn) {
                 props.setPlayerAPoints(playerAPoints => {
                     return playerAPoints + 1;
@@ -17,31 +17,38 @@ function GuessView(props) {
                     return playerBPoints + 1;
                 })
             }
+            alert("You guessed it right. Awesome work!")
             shiftTurn()
         } else {
-            alert("You guessed it wrong. Try again!")
+            alert("You guessed it wrong. Try again! Lives left: " + livesCount)
+            setLivesCount(
+                count => {
+                    return count - 1;
+                }
+            )
+            console.log(livesCount);
+            if (livesCount === 0) {
             if (!props.playerATurn) {
-                props.setPlayerAPoints(playerAPoints => {
-                    return playerAPoints - 1;
-                })
+                props.setPlayerAPoints((playerAPoints) => {
+                return playerAPoints - 1;
+                });
             } else {
-                props.setPlayerBPoints(playerBPoints => {
-                    return playerBPoints - 1;
-                })
+                props.setPlayerBPoints((playerBPoints) => {
+                return playerBPoints - 1;
+                });
             }
+            shiftTurn()
+            }
+            
         }
-        //shiftTurn()
-        
-        
     }
-
+    
     const shiftTurn = () => {
         props.setWordIsSelected(false)
         props.setIsDrawing(false)
         props.setPlayerATurn(!props.playerATurn)
     }
 
-    //The word to guess: {props.wordToGuess}
     return ( 
         <div className='GuessView'>
             <div className='ImageDiv'>
@@ -52,7 +59,6 @@ function GuessView(props) {
                     <h2>Your guess</h2>
                     <input type='text' ref={inputGuessRef} />
                 </form>
-
                 <button onClick={() => guessWord()}>Guess</button>
             </div>
         </div>

@@ -14,6 +14,8 @@ function Game(props) {
             <div className="Game">
                 <SketchView 
                     word={word} 
+                    playerBPoints={props.playerBPoints}
+                    playerAPoints={props.playerAPoints}
                     setPlayerAPoints={props.setPlayerAPoints} 
                     setPlayerBPoints={props.setPlayerBPoints} 
                     playerATurn={props.playerATurn}

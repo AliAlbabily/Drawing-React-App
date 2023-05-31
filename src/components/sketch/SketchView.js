@@ -53,19 +53,20 @@ function SketchView(props) {
 
     return (
         <div className="SketchView">
-            <div className='TopicAndTime'>
-                <h2>{props.word}</h2>
-                <h2>{count}</h2>
-                
-            </div>
             { isDrawing 
                 ? <>
+                    <div className='TopicAndTime'>
+                        <h2>{props.word}</h2>
+                        <h2>{count}</h2>
+                    </div>
                     <SketchCanvas setImageSrc={setImageSrc} submitDrawing={submitDrawing} canvasRef={canvasRef} />
                     <SubmitBtn submitDrawing={submitDrawing} />
                 </>
                 : <><GuessView 
                     imageSrc={imageSrc} 
                     wordToGuess={props.word}
+                    playerBPoints={props.playerBPoints}
+                    playerAPoints={props.playerAPoints}
                     setPlayerAPoints={props.setPlayerAPoints} 
                     setPlayerBPoints={props.setPlayerBPoints} 
                     playerATurn={props.playerATurn}

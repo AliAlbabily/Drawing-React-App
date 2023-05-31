@@ -13,6 +13,8 @@ function App() {
     <div className="App">
       <PlayerList playerBPoints={playerBPoints} playerAPoints={playerAPoints}/>
       <Game 
+        playerBPoints={playerBPoints}
+        playerAPoints={playerAPoints}
         setPlayerBPoints={setPlayerBPoints} 
         setPlayerAPoints={setPlayerAPoints} 
         setPlayerATurn={setPlayerATurn} 
