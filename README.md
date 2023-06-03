@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# Guess the drawing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Om
 
-## Available Scripts
+Guess the drawing, som namnet antyder, är ett rita & gissa-applikation. Applikationen tillåter två spelare att tävla mot varandra genom att en spelare ritar och den andra spelaren gissar på vad sin motståndare har ritat. Den som ritar får först välja mellan olika ord och om denne inte är nöjd med orden så går det att hämta nya ord. När ett ord har blivit vald så får spelaren en minut på sig att rita. Det finns olika färger att välja mellan för att uttrycka sig på olika sätt. När spelaren som ritar är klar, så är det dags för den andra spelaren att gissa. Rätt gissning ger 1 poäng medan 3 felaktiga gissningar i rad tar bort 1 poäng. Efter rätt gissning eller 3 felaktiga gissningar, så bytar spelarna plats. Första spelaren till 3 poäng vinner!
 
-In the project directory, you can run:
+## Analys av ramverk/bibliotek 
 
-### `npm start`
+Vi valde att inte använda Angular på grund av inlärningskurvan och kravet på TypeScript. Angular passar bättre för större teams och projekt och eftersom denna projekt är simpel med en utvecklingstid på cirka två veckor kändes Angular för komplex och lite för mycket för vad som behövdes. AngularJS är såklart ett alternativ då det är baserat på JavaScript men samtidigt är det också på väg ut.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Vue är ett litet ramverk med bra prestanda. Den är enkel att förstå och lära sig men den är också ny jämfört med React och Angular. Vue inte en lika stor "community" som de andra ramverken/bibliotek vilket kan leda till mindre hjälp om vi kör fast. Detta kan man se över då Vue har tydlig och bra dokumentation och erjubder flexibilitet i koden men här kan ramverket också vara ett dubbeleggat svärd då det finns risk för över flexibilitet.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Likt Vue så är React också flexibel med bra prestanda. React är enkel att lära sig men eftersom React uppdaterar sig själv frekvent så leder det till sämre dokumentation än exempelvis Angular och Vue. Den sämre dokumentationen kan dock mitigeras till viss grad eftersom React kan sägas vara den mest populära av de tre nämnda ramverken/bibliotek och har därmed en stor "community" som man kan ta hjälp av. Alla i gruppen har arbetat med React tidigare i både kursen och själva programmet och eftersom vi alla ville fördjupa oss mer i det så var React föredraget, men vi kunde likaväl använt ramverket Vue på grund av den enkla inlärningskurvan och storleken på projektet.

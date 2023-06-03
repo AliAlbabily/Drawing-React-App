@@ -1,5 +1,6 @@
 .Playerlist {
     background-color: #8080bf;
+    grid-area: list;
 }
 
 .Playerlist > h1 {

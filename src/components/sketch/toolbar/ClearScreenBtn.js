@@ -1,3 +1,4 @@
+import './ClearScreenBtn.css';
 
 function ClearScreenBtn(props) {
     return (

@@ -8,8 +8,6 @@ import './Toolbar.css';
 function Toolbar(props) {
   return (
     <div className="Toolbar">
-      {/* <Eraser />
-      <PenSizeSelector /> */}
       <ClearScreenBtn clearDrawing={props.clearDrawing} />
       <ColorSelector switchColor={props.switchColor} />
     </div>
