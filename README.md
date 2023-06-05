@@ -7,10 +7,22 @@ Guess the drawing, som namnet antyder, är ett rita & gissa-applikation. Applika
 ## Instruktioner
 
 1. Klona repositoryn från GitHub.
-2. Öppna repositoryn i Visual Studio Code och installera följande:
-   - react-scripts
-   - react-sketch-canvas (om det behövs)
-3. Kör applikationen med npm start i terminalen.
+2. Öppna repositoryn i Visual Studio Code och installera följande med terminalen:
+
+   - ### `npm install react-scripts`
+      Innehåller konfigurationer och skripter som används av Create React App. Utan de kan man inte starta applikationen.
+      Applikationen kommer att köras på http://localhost:3000/ i browsern.
+      
+   - ### `npm install react-sketch-canvas` 
+      react-sketch-canvas är ett ritnings-komponent för React. För att kunna rita i applikationen
+      behöver du först installera komponenten.
+
+3. Kör applikationen i terminalen med:
+
+### `npm start`
+
+Om detta inte funkar så behöver du dubbelkolla att du skrivit `npm install react-scripts` i terminalen tidigare.
+
 4. Spela!
 
 ## Analys av ramverk/bibliotek 
